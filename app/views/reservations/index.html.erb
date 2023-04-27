@@ -3,7 +3,7 @@
 <ul>
   <% @reservations.each do |reservation| %>
     <li>
-      <%= reservation.start_date %>
+      <%= link_to reservation.start_date, reservation %>
     </li>
   <% end %>
 </ul>

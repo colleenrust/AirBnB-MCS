@@ -1,0 +1,15 @@
+<%= form_with model: @review do |form|%>
+  <div>
+    <%= form.label :rating %><br>
+    <%= form.text_field :rating %>
+  </div>
+
+  <div>
+    <%= form.label :comment %><br>
+    <%= form.text_field :comment %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
