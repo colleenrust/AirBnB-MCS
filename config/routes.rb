@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   # Reservation Routes
   
-  get "/reservations" => "reservations#index"
+  resources :reservations
 
   # Review routes
 
-  get "/reviews" => "reviews#index"
+  resources :routes
 
   # Sign Up Routes (users)
 
