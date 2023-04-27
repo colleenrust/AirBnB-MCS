@@ -1,4 +1,4 @@
-<h1>This is a page for one singular room</h1>
+<h1>Room</h1>
 
 <p>user_id: <%= @room.user_id %><p>
 <p>address: <%= @room.address %><p>
@@ -11,4 +11,5 @@
 <p>total_bedrooms: <%= @room.total_bedrooms %><p>
 <p>total_bathrooms: <%= @room.total_bathrooms %><p>
 
-
+<a href="/rooms/<%= @room.id %>/edit">Edit Room</a>
+<a href="/rooms/<%= @room.id %>" data-turbo-method="delete">Remove Room</a>
