@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      # NEED TO CHANGE THIS REDIRECT BELOW ONCE OTHER ROUTES ARE DONE
-      redirect_to "/"
+  
+      redirect_to "/rooms"
     else
       redirect_to "/login"
     end
