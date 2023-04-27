@@ -1,0 +1,18 @@
+<h1>Hello i am in the rooms index</h1>
+
+
+<% @rooms.each do |room| %>
+  <p><strong>user_id:</strong> <%= room.user_id %><p>
+  <p><strong>address:</strong> <%= room.address %><p>
+  <p><strong>city:</strong> <%= room.city %><p>
+  <p><strong>state:</strong> <%= room.state %><p>
+    <p><strong>price:</strong> <%= room.price %><p>
+  <p><strong>description:</strong> <%= room.description %><p>
+  <p><strong>home_type:</strong> <%= room.home_type %><p>
+  <p><strong>room_type:</strong> <%= room.room_type %><p>
+  <p><strong>total_occupancy:</strong> <%= room.total_occupancy %><p>
+  <p><strong>total_bedrooms:</strong> <%= room.total_bedrooms %><p>
+  <p><strong>total_bathrooms:</strong> <%= room.total_bathrooms %><p>
+  <a href="/rooms/<%= room.id %>">More info</a>
+  <hr />
+<% end %>

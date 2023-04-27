@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   
   get "/reservations" => "reservations#index"
 
+  # Defines the root path route ("/")
+  # root "articles#index"
+  get "/rooms" => "rooms#index"
+  get "/rooms/:id" => "rooms#show"
+
   # Review routes
 
   get "/reviews" => "reviews#index"

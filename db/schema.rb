@@ -11,6 +11,23 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_04_27_165441) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_27_164305) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.integer "price"
+    t.text "description"
+    t.string "home_type"
+    t.string "room_type"
+    t.integer "total_occupancy"
+    t.integer "total_bedrooms"
+    t.integer "total_bathrooms"
+ActiveRecord::Schema[7.0].define(version: 2023_04_27_164743) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,9 +38,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_27_165441) do
     t.date "end_date"
     t.decimal "price"
     t.decimal "total"
+
+ActiveRecord::Schema[7.0].define(version: 2023_04_27_165441) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "room_images", force: :cascade do |t|
+    t.integer "room_id"
+    t.string "url"
+
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+
+end
+
 
   create_table "reviews", force: :cascade do |t|
     t.integer "reservation_id"
