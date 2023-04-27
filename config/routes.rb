@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Reservation Routes
   
-  get "/reservations" => "reservations#index"
+  resources :reservations
 
   # Defines the root path route ("/")
   # root "articles#index"
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # Review routes
 
-  get "/reviews" => "reviews#index"
+  resources :reviews
 
   # Sign Up Routes (users)
 
