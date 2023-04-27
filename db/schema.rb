@@ -40,6 +40,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_27_165441) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "rooms", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.integer "price"
+    t.text "description"
+    t.string "home_type"
+    t.string "room_type"
+    t.integer "total_occupancy"
+    t.integer "total_bedrooms"
+    t.integer "total_bathrooms"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
