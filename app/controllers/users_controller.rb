@@ -4,5 +4,7 @@ class UsersController < ApplicationController
     @user = User.new
     render json: {message: "testing new user action"}
   end
-   
+
+  
+
 end
