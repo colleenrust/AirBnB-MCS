@@ -1,4 +1,5 @@
 <h1>Rooms Index</h1>
+  <a href= "/rooms/new">New Room</a>
 
 
 <% @rooms.each do |room| %>
@@ -13,6 +14,6 @@
   <p><strong>total_occupancy:</strong> <%= room.total_occupancy %><p>
   <p><strong>total_bedrooms:</strong> <%= room.total_bedrooms %><p>
   <p><strong>total_bathrooms:</strong> <%= room.total_bathrooms %><p>
-  <a href="/rooms/<%= room.id %>">More info</a>
+  <a class= "btn btn-primary" href="/rooms/<%= room.id %>" role = "button" >BOOK IT!</a>
   <hr />
 <% end %>
