@@ -1,5 +1,12 @@
 <h1><%= "Your trip from #{@reservation.start_date} to #{@reservation.end_date}" %>
 
 <body>
-<%= @reservation.price %>
-<%= @reservation.total %>
+<div> Price: </div>
+<div>
+  <%= @reservation.price %>
+</div>
+
+<div> Total: </div>
+<div>
+  <%= @reservation.total %>
+</div>

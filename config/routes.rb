@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   # Review routes
 
-  resources :routes
+  resources :reviews
 
   # Sign Up Routes (users)
 
