@@ -3,3 +3,7 @@
 <body>
 <div> <%= @review.rating %> </div>
 <div> <%= @review.comment %> </div>
+
+<ul>
+  <li> <%= link_to "Edit", edit_review_path(@review) %>
+</ul>

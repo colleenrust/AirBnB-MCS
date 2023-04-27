@@ -27,4 +27,22 @@ class RoomsController < ApplicationController
     @room.save
     redirect_to "/rooms/#{@room.id}"
   end
+  def edit
+    @room = Room.find_by(id: params[:id])
+    render :edit
+  end
+
+  def update
+    room = Room.find_by(id: params[:id])
+    room.age = params[:room][:age]
+    room.name = params[:room][:name]
+    room.species = params[:room][:species]
+    room.save
+    redirect_to "/rooms/#{room.id}"
+  end
+  def destroy
+    room = Room.find_by(id: params[:id])
+    room.destroy
+    redirect_to "/rooms"
+  end
 end
