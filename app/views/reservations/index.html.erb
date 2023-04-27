@@ -1,0 +1,9 @@
+<h1> Reservations </h1>
+
+<ul>
+  <% @reservations.each do |reservation| %>
+    <li>
+      <%= reservation.start_date %>
+    </li>
+  <% end %>
+</ul>

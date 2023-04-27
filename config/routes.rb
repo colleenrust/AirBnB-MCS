@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  # Reservation Routes
+  
+  get "/reservations" => "reservations#index"
+
+  # Review routes
+
+  get "/reviews" => "reviews#index"
+
   # Sign Up Routes (users)
 
   get "/signup" => "users#new"
@@ -9,5 +17,4 @@ Rails.application.routes.draw do
   get "/login" => "sessions#new"
   post "/sessions" => "sessions#create"
   get "/logout" => "sessions#destroy"
-
 end
