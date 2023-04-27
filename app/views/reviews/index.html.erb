@@ -3,7 +3,7 @@
 <ul>
   <% @reviews.each do |review| %>
   <li>
-    <%= review.rating %>
+    <%= link_to review.rating, review %>
   </li>
   <% end %>
 </ul>
