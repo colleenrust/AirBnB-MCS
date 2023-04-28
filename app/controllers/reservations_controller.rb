@@ -14,11 +14,15 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = current_user.id
+    
+    
+
 
     if @reservation.save
       redirect_to @reservation
     else
-      render :new, status: unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -38,6 +42,6 @@ class ReservationsController < ApplicationController
 
   private
     def reservation_params
-      params.require(:reservation).permit(:start_date, :end_date)
+      params.require(:reservation).permit(:start_date, :end_date, :room_id)
     end
 end
