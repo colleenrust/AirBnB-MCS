@@ -1,4 +1,5 @@
 <%= form_with model: @reservation do |form|%>
+
   <div>
     <%= form.label :start_date %><br>
     <%= form.text_field :start_date %>
@@ -8,6 +9,12 @@
     <%= form.label :end_date %><br>
     <%= form.text_field :end_date %>
   </div>
+
+<div>
+  <%= form.label :room_id %><br>
+  <%= form.text_field :room_id %>
+</div>  
+  
 
   <div>
     <%= form.submit %>

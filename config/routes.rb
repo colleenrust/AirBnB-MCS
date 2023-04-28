@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
-  # Reservation Routes
+
+  #Reservations routes
   
   resources :reservations
 
-  # Defines the root path route ("/")
-  # root "articles#index"
- 
-  resources :rooms
-  # get "/rooms" => "rooms#index"
-  # get "/rooms/new" => "rooms#new"
-  # get "/rooms/:id" => "rooms#show"
+  #Rooms routes
+  
+  resources :rooms 
+
 
   # Room Images
   resources :room_images, only: [:create, :destroy]
@@ -20,9 +18,8 @@ Rails.application.routes.draw do
 
   # Sign Up Routes (users)
 
-  get "/signup" => "users#new"
-  post "/users" => "users#create"
-
+  resources :users
+  
   # Login Routes (sessions)
 
   get "/login" => "sessions#new"
