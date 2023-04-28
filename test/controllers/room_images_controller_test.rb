@@ -1,6 +1,6 @@
 require "test_helper"
 
-class RoomImageTest < ActiveSupport::TestCase
+class RoomImagesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

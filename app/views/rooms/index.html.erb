@@ -1,19 +1,21 @@
-<h1>Rooms Index</h1>
-  <a href= "/rooms/new">New Room</a>
+<div class="mx-auto p-2" style="width: 200px;">
+</div>
 
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @rooms.each do |room| %>
+    <div class="col">
+      <div class="card h-100">
+        <img src="<%= room.room_image %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <center><h5 class="card-title"><%= room.home_type %></h5></center>
+          <center><p class="card-text"><%= room.description %>.</p></center>
+        </div>
+        <div class="card-footer">
+          <center><small class="text-body-secondary"><a class="btn btn-primary" href="/rooms/<%= room.id %>" role="button">BOOK IT!</a></small></center>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-<% @rooms.each do |room| %>
-  <p><strong>user_id:</strong> <%= room.user_id %><p>
-  <p><strong>address:</strong> <%= room.address %><p>
-  <p><strong>city:</strong> <%= room.city %><p>
-  <p><strong>state:</strong> <%= room.state %><p>
-  <p><strong>price:</strong> <%= room.price %><p>
-  <p><strong>description:</strong> <%= room.description %><p>
-  <p><strong>home_type:</strong> <%= room.home_type %><p>
-  <p><strong>room_type:</strong> <%= room.room_type %><p>
-  <p><strong>total_occupancy:</strong> <%= room.total_occupancy %><p>
-  <p><strong>total_bedrooms:</strong> <%= room.total_bedrooms %><p>
-  <p><strong>total_bathrooms:</strong> <%= room.total_bathrooms %><p>
-  <a class= "btn btn-primary" href="/rooms/<%= room.id %>" role = "button" >BOOK IT!</a>
-  <hr />
-<% end %>
+<hr />

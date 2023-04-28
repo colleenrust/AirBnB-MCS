@@ -3,10 +3,12 @@ class RoomsController < ApplicationController
     @rooms = Room.all
     render :index
   end
+  
   def show
     @room = Room.find_by(id: params[:id])
     render :show
   end
+  
   def new    
     @room = Room.new
   end
@@ -22,11 +24,13 @@ class RoomsController < ApplicationController
       home_type: params[:room][:home_type],
       total_occupancy: params[:room][:total_occupancy],
       total_bedrooms: params[:room][:total_bedrooms],
-      total_bathrooms: params[:room][:total_bathrooms]
+      total_bathrooms: params[:room][:total_bathrooms],
+      room_image: params[:room][:room_image],
     )
     @room.save
-    redirect_to "/rooms/#{@room.id}"
+    redirect_to "/rooms/#{@room.id}" 
   end
+  
   def edit
     @room = Room.find_by(id: params[:id])
     render :edit
@@ -40,6 +44,7 @@ class RoomsController < ApplicationController
     room.save
     redirect_to "/rooms/#{room.id}"
   end
+  
   def destroy
     room = Room.find_by(id: params[:id])
     room.destroy
