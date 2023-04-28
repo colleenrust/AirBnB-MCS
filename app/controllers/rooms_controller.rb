@@ -25,17 +25,10 @@ class RoomsController < ApplicationController
       total_occupancy: params[:room][:total_occupancy],
       total_bedrooms: params[:room][:total_bedrooms],
       total_bathrooms: params[:room][:total_bathrooms],
+      room_image: params[:room][:room_image],
     )
-    if @room.save
-      @room_image = RoomImage.new(
-        url: params[:room_image],
-        room_id: @room_id,
-      )
-      @room_image.save
-      redirect_to "/rooms/#{@room.id}"
-    else
-      render json: {errors: @room.errors.full_messages}
-    end
+    @room.save
+    redirect_to "/rooms/#{@room.id}" 
   end
   
   def edit
