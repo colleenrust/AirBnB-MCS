@@ -5,12 +5,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+ 
+  resources :rooms
   # get "/rooms" => "rooms#index"
   # get "/rooms/new" => "rooms#new"
   # get "/rooms/:id" => "rooms#show"
-  resources :rooms
-  
 
+  # Room Images
+  resources :room_images, only: [:create, :destroy]
+  
   # Review routes
 
   resources :reviews
