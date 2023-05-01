@@ -1,7 +1,19 @@
 class RoomsController < ApplicationController
   def index
     @rooms = Room.all
-    render :index
+
+    if params[:home_type].present?
+      @rooms = @rooms.where(home_type: params[:home_type])
+    end
+    
+    if params[:city].present?
+      @rooms = @rooms.where(city: params[:city])
+    end
+
+    if params[:state].present?
+      @rooms = @rooms.where(state: params[:state])
+    end
+    # render :index
   end
   
   def show
