@@ -12,11 +12,9 @@
 
 <div>
   <%= form.label :room_id %><br>
-  <%= form.text_field :room_id %>
+  <%= form.text_field :room_id, value: params[:room_id] %>
 </div>  
   
 
-  <div>
-    <%= form.submit %>
-  </div>
+
 <% end %>
