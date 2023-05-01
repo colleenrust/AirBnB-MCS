@@ -5,7 +5,9 @@
   <% @rooms.each do |room| %>
     <div class="col">
       <div class="card h-100">
-        <img src="<%= room.room_image %>" class="card-img-top" alt="...">
+        <div class="ratio ratio-4x3">
+          <img src="<%= room.room_image %>" class="card-img-top room-image" alt="...">
+        </div>
         <div class="card-body">
           <center><h5 class="card-title"><%= room.home_type %></h5></center>
           <center><p class="card-text"><%= room.description %>.</p></center>
@@ -19,3 +21,22 @@
 </div>
 
 <hr />
+
+<style>
+  .room-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ratio {
+    position: relative;
+    width: 100%;
+  }
+
+  .ratio:before {
+    content: "";
+    display: block;
+    padding-top: 60%; /* This is the aspect ratio: 4/3 * 100% */
+  }
+</style>
