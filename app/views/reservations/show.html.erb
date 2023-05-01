@@ -1,16 +1,18 @@
 <h1><%= "Your trip from #{@reservation.start_date} to #{@reservation.end_date}" %>
 
 <body>
-<div> Price: </div>
-<div>
-  <%= @reservation.price %>
-</div>
+<p> Price: </p>
+<p>
+  <%= "$#{@reservation.price}" %>
+</p>
 
-<div> Total: </div>
-<div>
-  <%= @reservation.total %>
-</div>
+<p> Total: </p>
+<p>
+  <%= "$#{@reservation.total}" %>
+</p>
 
 <ul>
-  <li> <%= link_to "Edit", edit_reservation_path(@reservation) %>
+  <li> <%= link_to "Edit", edit_reservation_path(@reservation) %> </li>
+
+  <li> <%= link_to "Review", new_review_path %> </li>
 </ul>
