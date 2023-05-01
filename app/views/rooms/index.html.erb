@@ -1,3 +1,25 @@
+
+<div class="container mt-4">
+  <%= form_with url: rooms_path, method: :get, local: true, role: "filter" do %>
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-2">
+        <%= select_tag :home_type, options_for_select(["Entire Home", "Private Room", "Tiny Home"], params[:home_type]), prompt: "Home Type", class: "form-select" %>
+      </div>
+      <div class="col-md-2">
+        <%= text_field_tag :city, params[:city], placeholder: "Enter a city", class: "form-control" %>
+      </div>
+      <div class="col-md-2">
+        <%= text_field_tag :state, params[:state], placeholder: "Enter a state", class: "form-control" %>
+      </div>
+      <div class="col-md-2">
+        <%= label_tag nil, " " %>
+        <%= submit_tag "Filter", class: "btn btn-primary form-control" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
 <div class="mx-auto p-2" style="width: 200px;">
 </div>
 <div class='container' style='margin-top: 25px; margin-bottom: 30px;'>
@@ -26,8 +48,6 @@ $(document).ready(function(){
   }); 
 });
 </script>
-
-
 
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
