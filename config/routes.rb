@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   #Rooms routes
   
-  resources :rooms 
+  resources :rooms
+  get "/rooms/:room_id/reservations/new" => "reservations#new"
 
 
   # Room Images

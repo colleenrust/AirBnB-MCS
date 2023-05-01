@@ -13,8 +13,10 @@
 <p>total_bathrooms: <%= @room.total_bathrooms %><p>
 <img src="<%= @room.room_image %>" class="card-img-top" alt="..."> 
 
+<p> reviews: 
+
 <a href="/rooms/<%= @room.id %>/edit">Edit Room</a>
 <a href="/rooms/<%= @room.id %>" data-turbo-method="delete">Remove Room</a>
 
-<%= link_to "Reserve Room", new_reservation_path
+<%= link_to "Reserve Room", "/rooms/#{@room.id}/reservations/new"
  %>
