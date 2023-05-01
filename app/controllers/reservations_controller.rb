@@ -15,6 +15,8 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
+    @reservation.price = @price
+    @reservation.total = @total
     
     
 
