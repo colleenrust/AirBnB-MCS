@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   #Reservations routes
   
   resources :reservations
+  get "/reservations/:reservation_id/reviews/new" => "reviews#new"
 
   #Rooms routes
   

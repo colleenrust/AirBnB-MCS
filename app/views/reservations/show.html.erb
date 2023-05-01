@@ -14,5 +14,5 @@
 <ul>
   <li> <%= link_to "Edit", edit_reservation_path(@reservation) %> </li>
 
-  <li> <%= link_to "Review", new_review_path %> </li>
+  <li> <%= link_to "Review", "/reservations/#{@reservation.id}/reviews/new" %> </li>
 </ul>
